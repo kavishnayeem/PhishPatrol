@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/png" href="logo.png">
+  <title>Phish Patrol</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="loading-overlay">
+    <div class="space-loader"></div>
+    <div class="loading-text">SCANNING WEBPAGE</div>
+  </div>
+
+  <div class="dashboard">
+    <header class="dashboard-header">
+      <h1>PHISH PATROL</h1>
+      <button id="scanBtn" class="scan-button">
+        INITIATE DEEP SCAN
+      </button>
+    </header>
+
+    <div class="current-url-panel">
+      <div class="current-url-label">CURRENT URL</div>
+      <div class="current-url-value" id="currentUrl">No URL selected</div>
+    </div>
+
+    <div class="stats-panel">
+      <div class="stat-item">
+        <div class="stat-label">TIME TAKEN</div>
+        <div class="stat-value" id="timeTaken">0s</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">TOTAL URLs</div>
+        <div class="stat-value" id="totalUrls">0</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">CONFIDENCE</div>
+        <div class="stat-value" id="confidence">0%</div>
+      </div>
+    </div>
+
+    <div class="verdict-panel">
+      <div class="verdict-label">PAGE VERDICT</div>
+      <div class="verdict-value" id="pageVerdict">UNKNOWN</div>
+    </div>
+
+    <div class="reasons-panel">
+      <div class="reasons-label">REPORT</div>
+      <div class="reasons-value" id="reasons" style="white-space: pre-line">No analysis performed yet</div>
+    </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

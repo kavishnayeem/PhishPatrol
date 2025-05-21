@@ -1,0 +1,215 @@
+:root {
+  --space-black: #0a0c17;
+  --off-white: #f8f8ff;
+  --cyber-red: #ff3860;
+  --hud-green: #23d160;
+  --warning-yellow: #ffdd57;
+  --deep-space: #1a1d2d;
+  --starlight: rgba(255,255,255,0.1);
+}
+
+body {
+  width: 420px;
+  min-height: 500px;
+  background: var(--space-black);
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(0,243,255,0.1);
+  border: 1px solid var(--starlight);
+}
+
+.dashboard-header {
+  text-align: center;
+  padding: 15px 0 25px;
+  border-bottom: 2px solid var(--off-white);
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.dashboard-header h1 {
+  font-size: 28px;
+  margin: 0 0 20px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px var(--off-white);
+}
+
+.scan-button {
+  background: linear-gradient(135deg, var(--deep-space) 0%, var(--space-black) 100%);
+  border: 2px solid var(--off-white);
+  padding: 15px 30px;
+  color: var(--off-white);
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-button:hover {
+  background: var(--off-white);
+  color: var(--space-black);
+  box-shadow: 0 0 20px var(--off-white);
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 12, 23, 0.98);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.space-loader {
+  border: 3px solid transparent;
+  border-top: 3px solid var(--off-white);
+  border-right: 3px solid var(--off-white);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: space-spin 1.5s linear infinite;
+  box-shadow: 0 0 30px var(--off-white);
+}
+
+.loading-text {
+  margin-top: 25px;
+  color: var(--off-white);
+  font-size: 16px;
+  letter-spacing: 3px;
+  animation: pulse 1.5s infinite;
+}
+
+.stats-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.stat-item {
+  background: linear-gradient(180deg, var(--deep-space) 0%, var(--space-black) 100%);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--starlight);
+}
+
+.stat-label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 0 10px var(--off-white);
+}
+
+.verdict-panel {
+  background: linear-gradient(180deg, var(--deep-space) 0%, var(--space-black) 100%);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 25px 0;
+  text-align: center;
+  border: 1px solid var(--starlight);
+}
+
+.verdict-label {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.verdict-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.verdict-value.safe {
+  color: var(--hud-green);
+  text-shadow: 0 0 15px var(--hud-green);
+}
+
+.verdict-value.malicious {
+  color: var(--cyber-red);
+  text-shadow: 0 0 15px var(--cyber-red);
+  animation: pulse-red 1.5s infinite;
+}
+
+.reasons-panel {
+  background: linear-gradient(180deg, var(--deep-space) 0%, var(--space-black) 100%);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--starlight);
+}
+
+.reasons-label {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.reasons-value {
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 10px;
+  background: rgba(10,12,23,0.5);
+  border-radius: 4px;
+}
+
+@keyframes space-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes pulse-red {
+  0% { text-shadow: 0 0 5px var(--cyber-red); }
+  50% { text-shadow: 0 0 20px var(--cyber-red); }
+  100% { text-shadow: 0 0 5px var(--cyber-red); }
+}
+.current-url-panel {
+  background: linear-gradient(180deg, var(--deep-space) 0%, var(--space-black) 100%);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--starlight);
+  margin-bottom: 15px;
+}
+
+.current-url-label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.current-url-value {
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 1.2;
+  padding: 5px;
+  background: rgba(10,12,23,0.5);
+  border-radius: 4px;
+  word-break: break-all;
+}
+
