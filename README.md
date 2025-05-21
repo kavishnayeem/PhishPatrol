@@ -17,9 +17,10 @@ PhishPatrol is an advanced phishing detection system powered by a large language
 ```
 PhishPatrol/
 │
-├── app.py                # FastAPI backend for phishing detection
-├── requirements.txt       # Python dependencies
-├── phishing_detector.onnx # ONNX model for fast inference
+└── backend/
+    ├── app.py                # FastAPI backend for phishing detection
+    ├── requirements.txt       # Python dependencies
+    └── phishing_detector.onnx # ONNX model for fast inference
 │
 ├── popup/                # Chrome extension source
 │   ├── popup.html
